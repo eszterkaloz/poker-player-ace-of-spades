@@ -4,6 +4,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import jdk.nashorn.internal.ir.IfNode;
 import jdk.nashorn.internal.parser.JSONParser;
 
 import java.util.Map;
@@ -38,7 +39,16 @@ public class Player {
         System.err.println("Balazs log " + game.get("current_buy_in").getAsInt());
         System.err.println("Balazs log " + game.get("minimum_raise").getAsInt());
         System.err.println("Eszter log " + game.get("community_cards").getAsJsonArray());
-        System.err.println("HOLE CARDS" + game.get("game_id"));
+        System.err.println("HOLE CARDS" + game.get("game_id").getAsString());
+
+        JsonArray players = game.get("players").getAsJsonArray();
+        for(JsonElement player : players){
+            System.err.println("TRYING TO PRINT PLAYERS ::::");
+
+            System.err.println("KINCSIKE LOG PLAYER:" + player.toString());
+
+        }
+
         return 100;
     }
 
