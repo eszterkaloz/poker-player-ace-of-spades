@@ -19,6 +19,7 @@ public class Player {
 
         if(game.get("round").getAsInt() > 0) {
             System.err.println(game.get("community_cards").getAsJsonArray());
+            System.err.println("CURRENT ROUND: " + game.get("round"));
             System.err.println(game.get("community_cards").getAsJsonArray().size());
         }
 
