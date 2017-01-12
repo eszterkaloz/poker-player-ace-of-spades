@@ -12,15 +12,15 @@ public class Player {
     static final String VERSION = "Default Java folding player";
 
     public static int betRequest(JsonElement request) {
-        System.err.println(request.toString());
+        System.err.println("Dani log" + request.toString());
         System.err.println("Some basic log ");
         return 100;
     }
 
     public static void showdown(JsonElement game) {
-        System.err.println(game.getAsJsonArray().get(0));
-        System.err.println(game.getAsJsonArray().get(0).getAsJsonObject());
-        System.err.println(game.toString());
+        System.err.println("Eszter log, array 0" + game.getAsJsonArray().get(0));
+        System.err.println("Eszter log " +game.getAsJsonArray().get(0).getAsJsonObject());
+        System.err.println("Eszter log" +game.toString());
 
     }
 }
