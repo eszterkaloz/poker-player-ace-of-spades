@@ -12,10 +12,10 @@ public class Player {
     static final String VERSION = "Default Java folding player";
 
     public static int betRequest(JsonElement request) {
-        System.err.println(request.getAsJsonObject().get("game_state"));
         return 100;
     }
 
     public static void showdown(JsonElement game) {
+        System.err.println(game.getAsJsonObject().get("players"));
     }
 }
