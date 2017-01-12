@@ -57,7 +57,7 @@ public class Player {
                 if(rank2Int == null) {
                     rank2Int = Integer.parseInt(rank2) / 2;
                 }
-                if (rank1Int + rank2Int > 8) {
+                if (rank1Int + rank2Int >= 8) {
                     return currentBuyIn - currentInActionBet;
                 }
             }
