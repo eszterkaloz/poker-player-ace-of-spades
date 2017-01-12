@@ -47,7 +47,7 @@ public class GameController {
             TwoCards two = new TwoCards(cardList);
             int score = two.ChenStrategy();
             System.err.println(score);
-            if (score >= 9) {
+            if (score >= 6) {
                 // raise
                 return currentBuyIn - currentInActionBet + minimumRaise;
             }
