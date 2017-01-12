@@ -1,29 +1,49 @@
 package logic;
 
+import com.google.gson.JsonObject;
+
 public class Card {
 
-    private Integer value;
-    private String color;
+    private int rank;
+    private String suit;
 
-    public Card(Integer value, String color) {
-        this.value = value;
-        this.color = color;
+    public Card(JsonObject card) {
+        this.rank = RankConverter(card.get("rank").getAsString());
+        this.suit = card.get("suit").getAsString();
+    }
+
+    public int RankConverter(String rank){
+        if (rank.equals("A")) {
+            return 14;
+        }
+        if (rank.equals("K")) {
+            return 13;
+        }
+        if (rank.equals("Q")) {
+            return 12;
+        }
+        if (rank.equals("J")) {
+            return 11;
+        }
+        else {
+            return Integer.parseInt(rank);
+        }
     }
 
     public Integer getValue() {
-        return value;
+        return rank;
     }
 
     public void setValue(Integer value) {
-        this.value = value;
+        this.rank = value;
     }
 
     public String getColor() {
-        return color;
+        return suit;
     }
 
     public void setColor(String color) {
-        this.color = color;
+        this.suit = color;
     }
 
     public boolean colorMatch(Card c) {
@@ -39,6 +59,6 @@ public class Card {
     }
 
     public boolean isFigure() {
-        return this.value > 10;
+        return this.rank > 10;
     }
 }

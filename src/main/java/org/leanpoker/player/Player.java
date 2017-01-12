@@ -19,14 +19,12 @@ public class Player {
     public static int betRequest(JsonElement request) {
         JsonObject game = request.getAsJsonObject();
 
-
         System.err.println("Community cards: KINCSI ::" + game.getAsJsonArray("community_cards"));
         System.err.println("Community cards: KINCSI ::::::::::::::::::::::::::::::::::::" + game.getAsString());
 
         int currentInActionBet = 0;
         int currentBuyIn = game.get("current_buy_in").getAsInt();
         int minimumRaise = game.get("minimum_raise").getAsInt();
-
 
         JsonArray players = game.get("players").getAsJsonArray();
 
