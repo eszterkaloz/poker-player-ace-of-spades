@@ -13,6 +13,7 @@ public class Player {
 
     public static int betRequest(JsonElement request) {
         System.err.println(request.getAsJsonObject().get("game_state"));
+        System.err.println("Some basic log ");
         return 100;
     }
 
