@@ -42,9 +42,15 @@ public class Player {
 
             }
         }
+
+        if(hole_cards.get(0).getAsJsonObject().get("suit").getAsString().equals(hole_cards.get(1).getAsJsonObject().get("suit").getAsString())) {
+            System.err.println(hole_cards.get(0).getAsJsonObject().get("suit").getAsString());
+            System.err.println(hole_cards.get(1).getAsJsonObject().get("suit").getAsString());
+        }
+
         if (currentBuyIn - currentInActionBet > 900) {
             return 0;
-        }else {
+        } else {
             return currentBuyIn - currentInActionBet;
         }
     }
