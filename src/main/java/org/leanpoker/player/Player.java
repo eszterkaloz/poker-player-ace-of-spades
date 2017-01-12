@@ -27,7 +27,6 @@ public class Player {
         int currentInActionBet = 0;
         int currentBuyIn = game.get("current_buy_in").getAsInt();
         int minimumRaise = game.get("minimum_raise").getAsInt();
-        int stack = game.get("stack").getAsInt();
 
 
         JsonArray players = game.get("players").getAsJsonArray();
@@ -59,11 +58,7 @@ public class Player {
                     rank2Int = Integer.parseInt(rank2) / 2;
                 }
                 if (rank1Int + rank2Int >= 8) {
-                    if(rank1.equals(rank2)){
-                        if ((currentBuyIn - currentInActionBet + 100) <= stack){
-                            return currentBuyIn - currentInActionBet + 100;
-                        } else return currentBuyIn - currentInActionBet;
-                    }
+                    if(rank1.equals(rank2)) return currentBuyIn - currentInActionBet;
                     if(rank1Int > 5 && rank2Int > 5) return currentBuyIn - currentInActionBet;
                     if(currentBuyIn-currentInActionBet < 900) return currentBuyIn - currentInActionBet;
                 }
