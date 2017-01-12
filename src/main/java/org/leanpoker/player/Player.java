@@ -19,7 +19,9 @@ public class Player {
     public static int betRequest(JsonElement request) {
         JsonObject game = request.getAsJsonObject();
 
-        System.err.println(game.toString());
+        if(game.get("round").getAsInt() > 0) {
+            System.err.println(game.get("community_cards").getAsJsonArray());
+        }
 
         System.err.println("Community cards: KINCSI ::" + game.getAsJsonArray("community_cards"));
         System.err.println("Community cards: KINCSI ::::::::::::::::::::::::::::::::::::" + game.getAsJsonObject().toString());
