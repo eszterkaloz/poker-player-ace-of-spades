@@ -49,8 +49,8 @@ public class Player {
                     put("K", 8);
                     put("A", 10);
                 }};
-                
-                return aceofspace.get("stack").getAsInt();
+
+//                return aceofspace.get("stack").getAsInt();
                 Integer rank1Int = converter.get(rank1);
                 Integer rank2Int = converter.get(rank2);
                 if (rank1Int == null) {
