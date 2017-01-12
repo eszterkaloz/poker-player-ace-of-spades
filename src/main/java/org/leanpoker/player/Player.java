@@ -49,7 +49,9 @@ public class Player {
                 player.getAsJsonObject().get("hole_cards").getAsJsonArray();
                 System.err.println("Eszter hole cards??????" + player.getAsJsonObject().get("hole_cards").getAsJsonArray());
                 System.err.println("KINCSIKE LOG PLAYER:" + player.toString());
+                return 100;
             }
+            return 100;
         }
 
         return 100;
