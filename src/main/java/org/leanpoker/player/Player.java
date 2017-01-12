@@ -31,7 +31,9 @@ public class Player {
 
         JsonArray players = game.get("community_cards").getAsJsonArray();
         for(JsonElement player : players){
-            System.err.println("Player" + player.toString());
+            System.err.println("TRYING TO PRINT PLAYERS ::::");
+
+            System.err.println("KINCSIKE LOG PLAYER:" + player.toString());
 
         }
 
