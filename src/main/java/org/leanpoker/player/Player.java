@@ -17,6 +17,7 @@ public class Player {
         JsonObject game = request.getAsJsonObject();
         System.err.println("Balazs log " + game.get("current_buy_in").getAsInt());
         System.err.println("Balazs log " + game.get("minimum_raise").getAsInt());
+        System.err.println("Eszter log " + game.get("community_cards").getAsJsonArray());
         return 100;
     }
 
