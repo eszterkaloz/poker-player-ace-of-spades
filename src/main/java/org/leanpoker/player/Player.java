@@ -1,5 +1,6 @@
 package org.leanpoker.player;
 
+import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -18,6 +19,8 @@ public class Player {
         int currentBuyIn = game.get("current_buy_in").getAsInt();
 
         int minimumRaise = game.get("minimum_raise").getAsInt();
+
+        System.err.println((JsonArray)game.get("players").getAsJsonArray());
 
         System.err.println("Eszter log players" + game.get("players").getAsJsonArray());
         System.err.println("Balazs log " + game.get("current_buy_in").getAsInt());
