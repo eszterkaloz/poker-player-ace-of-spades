@@ -18,8 +18,7 @@ public class Player {
     }
 
     public static void showdown(JsonElement game) {
-        System.err.println("Eszter log, array 0" + game.getAsJsonArray().get(0));
-        System.err.println("Eszter log " +game.getAsJsonArray().get(0).getAsJsonObject());
+        System.err.println("Eszter log (name)" + game.getAsJsonObject().get("name"));
         System.err.println("Eszter log" +game.toString());
 
     }
