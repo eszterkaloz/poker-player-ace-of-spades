@@ -12,6 +12,7 @@ public class Player {
     static final String VERSION = "Default Java folding player";
 
     public static int betRequest(JsonElement request) {
+        System.err.println("Some basic log");
         return 100;
     }
 
