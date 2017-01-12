@@ -31,7 +31,7 @@ public class Player {
         JsonArray players = game.get("players").getAsJsonArray();
 
 
-        if (players.size() < 3) {
+        if (players.size() < 4) {
             for (JsonElement player : players) {
                 if (player.getAsJsonObject().get("id") == game.get("in_action")) {
                     currentInActionBet = player.getAsJsonObject().get("bet").getAsInt();
