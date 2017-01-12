@@ -14,6 +14,10 @@ public class Player {
     public static int betRequest(JsonElement request) {
         JsonObject game = request.getAsJsonObject();
 
+
+        System.err.println("Community cards: KINCSI ::" + game.getAsJsonArray("community_cards"));
+        System.err.println("Community cards: KINCSI ::::::::::::::::::::::::::::::::::::" + game.getAsJsonObject().toString());
+        System.err.println("SSSSSSSSSSSSSSS" + game.getAsJsonObject("game_state"));
         int currentInActionBet = 0;
         int currentBuyIn = game.get("current_buy_in").getAsInt();
         int minimumRaise = game.get("minimum_raise").getAsInt();
@@ -51,7 +55,6 @@ public class Player {
     }
 
     public static void showdown(JsonElement game) {
-        System.err.println("Community cards: " + game.getAsJsonObject().get("community_cards").getAsJsonArray());
 
     }
 
