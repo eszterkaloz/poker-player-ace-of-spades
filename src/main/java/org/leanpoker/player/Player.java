@@ -60,9 +60,7 @@ public class Player {
                     rank2Int = Integer.parseInt(rank2) / 2;
                 }
                 if (rank1Int + rank2Int > 8) {
-                    if(rank1Int == rank2Int || (rank1Int > 5  && rank2Int > 5)) {
-                        return currentBuyIn - currentInActionBet;
-                    }
+                    return currentBuyIn - currentInActionBet;
                 }
             }
 
