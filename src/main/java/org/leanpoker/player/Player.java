@@ -14,6 +14,9 @@ public class Player {
     public static int betRequest(JsonElement request) {
         System.err.println("Dani log" + request.toString());
         System.err.println("Some basic log ");
+        JsonObject game = request.getAsJsonObject();
+        System.err.println("Balazs log " + game.get("current_buy_in").getAsInt());
+        System.err.println("Balazs log " + game.get("minimum_raise").getAsInt());
         return 100;
     }
 
