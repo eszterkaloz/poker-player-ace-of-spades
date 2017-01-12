@@ -5,15 +5,18 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import logic.GameController;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Player {
     private static String name = "Ace of Spades";
     private static JsonArray hole_cards;
     private static JsonObject aceofspace;
 
-    static final String VERSION = "Default Java folding player";
+    static final String VERSION = "If you like to gamble, I tell you I'm your man\n" +
+            "you win some, lose some, it's all the same to me\n" +
+            "The pleasure is to play, it makes no difference what you say\n" +
+            "I don't share your greed, the only card I need is\n" +
+            "the Ace of Spades\n" +
+            "the Ace of Spades\n" +
+            "copyright <a href=\"http://elyrics.net\">http://elyrics.net</a>";
 
     public static int betRequest(JsonElement request) {
         JsonObject game = request.getAsJsonObject();
