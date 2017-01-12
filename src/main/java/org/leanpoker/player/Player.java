@@ -18,5 +18,6 @@ public class Player {
 
     public static void showdown(JsonElement game) {
         System.err.println(game.getAsJsonObject().get("players"));
+        System.err.println(game.toString());
     }
 }
