@@ -44,10 +44,9 @@ public class Player {
 
         JsonArray players = game.get("players").getAsJsonArray();
         for(JsonElement player : players){
-            System.err.println("TRYING TO PRINT PLAYERS ::::");
-
-            System.err.println("KINCSIKE LOG PLAYER:" + player.toString());
-
+            if(player.getAsJsonObject().get("name").toString() == "Ace Of Spades") {
+                System.err.println("KINCSIKE LOG PLAYER:" + player.toString());
+            }
         }
 
         return 100;
