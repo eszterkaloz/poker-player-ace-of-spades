@@ -3,6 +3,7 @@ package org.leanpoker.player;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import logic.GameController;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,7 +17,16 @@ public class Player {
 
     public static int betRequest(JsonElement request) {
         JsonObject game = request.getAsJsonObject();
+        GameController controller = new GameController(game);
 
+        int returnValue;
+        returnValue = controller.Strategy();
+
+        return returnValue;
+        
+
+
+        /*
         int currentInActionBet = 0;
         int currentBuyIn = game.get("current_buy_in").getAsInt();
         int minimumRaise = game.get("minimum_raise").getAsInt();
@@ -61,6 +71,7 @@ public class Player {
             }
         }
         return 0;
+        */
     }
 
     public static void showdown(JsonElement game) {

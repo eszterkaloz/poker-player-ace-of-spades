@@ -13,10 +13,10 @@ public class GameController {
     int currentBuyIn;
     int minimumRaise;
     int currentInActionBet;
-    private ArrayList<Card> cardList = new ArrayList<>();
+    public ArrayList<Card> cardList = new ArrayList<>();
 
 
-    GameController(JsonObject game){
+    public GameController(JsonObject game){
         this.game = game;
         this.players = game.get("players").getAsJsonArray();
         this.InitCardList();
