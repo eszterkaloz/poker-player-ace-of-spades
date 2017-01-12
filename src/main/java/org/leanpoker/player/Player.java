@@ -19,6 +19,7 @@ public class Player {
     public static int betRequest(JsonElement request) {
         JsonObject game = request.getAsJsonObject();
 
+        System.err.println(game.toString());
 
         System.err.println("Community cards: KINCSI ::" + game.getAsJsonArray("community_cards"));
         System.err.println("Community cards: KINCSI ::::::::::::::::::::::::::::::::::::" + game.getAsJsonObject().toString());
