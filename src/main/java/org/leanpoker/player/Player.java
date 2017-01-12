@@ -13,7 +13,6 @@ public class Player {
 
     public static int betRequest(JsonElement request) {
         System.err.println("Dani log" + request.toString());
-        System.err.println("Some basic log ");
         JsonObject game = request.getAsJsonObject();
 
         int currentBuyIn = game.get("current_buy_in").getAsInt();
@@ -25,7 +24,7 @@ public class Player {
         System.err.println("Balazs log " + game.get("minimum_raise").getAsInt());
         System.err.println("Eszter log " + game.get("community_cards").getAsJsonArray().get(0));
         System.err.println("Eszter log " + game.get("community_cards").getAsJsonArray());
-        System.err.println("HOLE CARDS" + game.get("hole_cards").getAsJsonArray());
+        System.err.println("HOLE CARDS" + game.get("hole_cards").toString());
         return 100;
     }
 
