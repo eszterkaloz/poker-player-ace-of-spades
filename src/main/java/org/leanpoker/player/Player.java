@@ -31,6 +31,7 @@ public class Player {
             if(players.get(i).getAsJsonObject().get("name").getAsString().equals("Ace of Spaces")) {
                 System.err.println("found ace of spades");
                 players.get(i).getAsJsonObject().get("name").getAsJsonObject().get("hole_cards").getAsJsonArray();
+                System.err.println("HOLE CARDS???");
                 System.err.println(players.get(i).getAsJsonObject().get("name").getAsJsonObject().get("hole_cards").getAsJsonArray());
             }
         }
