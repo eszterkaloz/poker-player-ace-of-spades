@@ -46,7 +46,6 @@ public class Player {
             System.err.println(player.getAsJsonObject().get("name").getAsString());
             if(player.getAsJsonObject().get("name").getAsString().equals("Ace Of Spades")) {
                 System.err.println("found ace of spades");
-                System.err.println(player.getAsJsonObject().get("name").getAsJsonObject());
                 player.getAsJsonObject().get("hole_cards").getAsJsonArray();
                 System.err.println("Eszter hole cards??????" + player.getAsJsonObject().get("hole_cards").getAsJsonArray());
                 System.err.println("KINCSIKE LOG PLAYER:" + player.toString());
