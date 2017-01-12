@@ -15,8 +15,6 @@ public class PlayerTest {
 
         JsonElement jsonElement = new JsonParser().parse("{\"key1\": \"value1\", \"key2\": \"value2\"}");
 
-        JsonObject current_buy_in = new JSONParser().parse("current_buy_in");
-
 
         assertEquals(0, Player.betRequest(jsonElement));
 

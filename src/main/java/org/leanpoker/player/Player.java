@@ -28,9 +28,10 @@ public class Player {
         System.err.println("Balazs log " + game.get("minimum_raise").getAsInt());
         System.err.println("Eszter log " + game.get("community_cards").getAsJsonArray());
         System.err.println("HOLE CARDS" + game.get("game_id").getAsString());
+
         JsonArray players = game.get("community_cards").getAsJsonArray();
         for(JsonElement player : players){
-            System.err.println(player);
+            System.err.println("Player" + player.toString());
 
         }
 
