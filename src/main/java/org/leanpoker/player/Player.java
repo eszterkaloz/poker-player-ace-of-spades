@@ -17,7 +17,10 @@ public class Player {
         if(game.get("round").getAsInt() > 0) {
             System.err.println("SEARCHING FOR COMMUNITY CARDS");
             System.err.println(game.get("community_cards").getAsJsonArray());
+            System.err.println(game.get("community_cards").getAsJsonArray().size());
         }
+
+        System.err.println(game.get("community_cards").getAsJsonArray().size());
 
         int currentInActionBet = 0;
         int currentBuyIn = game.get("current_buy_in").getAsInt();
