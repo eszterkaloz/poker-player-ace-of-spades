@@ -10,13 +10,7 @@ public class Player {
     private static JsonArray hole_cards;
     private static JsonObject aceofspace;
 
-    static final String VERSION = "If you like to gamble, I tell you I'm your man\n" +
-            "you win some, lose some, it's all the same to me\n" +
-            "The pleasure is to play, it makes no difference what you say\n" +
-            "I don't share your greed, the only card I need is\n" +
-            "the Ace of Spades\n" +
-            "the Ace of Spades\n" +
-            "copyright <a href=\"http://elyrics.net\">http://elyrics.net</a>";
+    static final String VERSION = "If you like to gamble";
 
     public static int betRequest(JsonElement request) {
         JsonObject game = request.getAsJsonObject();
