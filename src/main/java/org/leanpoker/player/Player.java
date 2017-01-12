@@ -15,12 +15,10 @@ public class Player {
         JsonObject game = request.getAsJsonObject();
 
         if(game.get("round").getAsInt() > 0) {
+            System.err.println("SEARCHING FOR COMMUNITY CARDS");
             System.err.println(game.get("community_cards").getAsJsonArray());
         }
 
-        System.err.println("Community cards: KINCSI ::" + game.getAsJsonArray("community_cards"));
-        System.err.println("Community cards: KINCSI ::::::::::::::::::::::::::::::::::::" + game.getAsJsonObject().toString());
-        System.err.println("SSSSSSSSSSSSSSS" + game.getAsJsonObject("game_state"));
         int currentInActionBet = 0;
         int currentBuyIn = game.get("current_buy_in").getAsInt();
         int minimumRaise = game.get("minimum_raise").getAsInt();
