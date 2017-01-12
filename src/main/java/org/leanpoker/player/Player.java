@@ -38,16 +38,18 @@ public class Player {
                 String rank1 = card1.get("rank").getAsString();
                 String rank2 = card2.get("rank").getAsString();
                 if (rank1.equals(rank2)){
-                    try{
-                        Integer.parseInt(rank1);
-                    } catch(Exception e) {
-                        try{
-                            Integer.parseInt(rank2);
-                        } catch (Exception e2){
-                            return currentBuyIn - currentInActionBet;
-                        }
+                    return currentBuyIn - currentInActionBet;
 
+                }
+                try{
+                    Integer.parseInt(rank1);
+                } catch(Exception e) {
+                    try{
+                        Integer.parseInt(rank2);
+                    } catch (Exception e2){
+                        return currentBuyIn - currentInActionBet;
                     }
+
                 }
             }
         }
