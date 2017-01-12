@@ -21,9 +21,21 @@ public class Player {
 
         int minimumRaise = game.get("minimum_raise").getAsInt();
 
-        System.err.println((JsonArray)game.get("players").getAsJsonArray());
 
         System.err.println("Eszter log players" + game.get("players").getAsJsonArray());
+        JsonArray players = game.get("players").getAsJsonArray();
+
+        for(int i = 0; i < players.size(); i++) {
+            System.err.println(players.get(i).getAsJsonObject().get("name"));
+
+            if(players.get(i).getAsJsonObject().get("name").getAsString().equals("Ace of Spaces")) {
+                System.err.println("found ace of spades");
+                players.get(i).getAsJsonObject().get("name").getAsJsonObject().get("hole_cards").getAsJsonArray();
+                System.err.println(players.get(i).getAsJsonObject().get("name").getAsJsonObject().get("hole_cards").getAsJsonArray());
+            }
+        }
+
+
         System.err.println("Balazs log " + game.get("current_buy_in").getAsInt());
         System.err.println("Balazs log " + game.get("minimum_raise").getAsInt());
         System.err.println("Eszter log " + game.get("community_cards").getAsJsonArray());
