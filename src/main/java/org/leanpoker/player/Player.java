@@ -33,7 +33,8 @@ public class Player {
             if(player.getAsJsonObject().get("name").getAsString().equals("Ace Of Spades")) {
                 aceofspace = player.getAsJsonObject();
                 hole_cards = player.getAsJsonObject().get("hole_cards").getAsJsonArray();
-                if (currentBuyIn == aceofspace.get("stack").getAsInt()) {
+
+                if (currentBuyIn - currentInActionBet > 900) {
                     return 0;
                 }else {
                     return currentBuyIn - currentInActionBet;
@@ -41,7 +42,7 @@ public class Player {
 
             }
         }
-        if (currentBuyIn == aceofspace.get("stack").getAsInt()) {
+        if (currentBuyIn - currentInActionBet > 900) {
             return 0;
         }else {
             return currentBuyIn - currentInActionBet;
