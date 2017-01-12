@@ -17,16 +17,9 @@ public class Player {
     public static int betRequest(JsonElement request) {
         JsonObject game = request.getAsJsonObject();
 
-        if(game.get("bet_index").getAsInt() > 0) {
-            System.err.println(game.get("community_cards").getAsJsonArray());
-            System.err.println("CURRENT ROUND: " + game.get("bet_index"));
-            System.err.println(game.get("community_cards").getAsJsonArray().size());
-        }
-
         int currentInActionBet = 0;
         int currentBuyIn = game.get("current_buy_in").getAsInt();
         int minimumRaise = game.get("minimum_raise").getAsInt();
-
 
         JsonArray players = game.get("players").getAsJsonArray();
 
