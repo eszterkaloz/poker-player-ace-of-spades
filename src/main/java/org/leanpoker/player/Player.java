@@ -4,9 +4,6 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Player {
     private static String name = "Ace of Spades";
     private static JsonArray hole_cards;
@@ -31,41 +28,45 @@ public class Player {
         JsonArray players = game.get("players").getAsJsonArray();
 
 
-        for(JsonElement player : players) {
-            if (player.getAsJsonObject().get("id") == game.get("in_action")) {
-                currentInActionBet = player.getAsJsonObject().get("bet").getAsInt();
-            }
-            if (player.getAsJsonObject().get("name").getAsString().equals("Ace Of Spades")) {
-                aceofspace = player.getAsJsonObject();
-                hole_cards = player.getAsJsonObject().get("hole_cards").getAsJsonArray();
-
-                JsonObject card1 = hole_cards.get(0).getAsJsonObject();
-                JsonObject card2 = hole_cards.get(1).getAsJsonObject();
-                String rank1 = card1.get("rank").getAsString();
-                String rank2 = card2.get("rank").getAsString();
-                Map<String, Integer> converter = new HashMap<String, Integer>() {{
-                    put("J", 6);
-                    put("Q", 7);
-                    put("K", 8);
-                    put("A", 10);
-                }};
-
-//                return aceofspace.get("stack").getAsInt();
-                Integer rank1Int = converter.get(rank1);
-                Integer rank2Int = converter.get(rank2);
-                if (rank1Int == null) {
-                    rank1Int = Integer.parseInt(rank1) / 2;
-                }
-                if (rank2Int == null) {
-                    rank2Int = Integer.parseInt(rank2) / 2;
-                }
-                if (rank1Int + rank2Int > 8) {
-                    return currentBuyIn - currentInActionBet;
-                }
-            }
-
+//        for(JsonElement player : players) {
+//            if (player.getAsJsonObject().get("id") == game.get("in_action")) {
+//                currentInActionBet = player.getAsJsonObject().get("bet").getAsInt();
+//            }
+//            if (player.getAsJsonObject().get("name").getAsString().equals("Ace Of Spades")) {
+//                aceofspace = player.getAsJsonObject();
+//                hole_cards = player.getAsJsonObject().get("hole_cards").getAsJsonArray();
+//
+//                JsonObject card1 = hole_cards.get(0).getAsJsonObject();
+//                JsonObject card2 = hole_cards.get(1).getAsJsonObject();
+//                String rank1 = card1.get("rank").getAsString();
+//                String rank2 = card2.get("rank").getAsString();
+//                Map<String, Integer> converter = new HashMap<String, Integer>() {{
+//                    put("J", 6);
+//                    put("Q", 7);
+//                    put("K", 8);
+//                    put("A", 10);
+//                }};
+//
+////                return aceofspace.get("stack").getAsInt();
+//                Integer rank1Int = converter.get(rank1);
+//                Integer rank2Int = converter.get(rank2);
+//                if (rank1Int == null) {
+//                    rank1Int = Integer.parseInt(rank1) / 2;
+//                }
+//                if (rank2Int == null) {
+//                    rank2Int = Integer.parseInt(rank2) / 2;
+//                }
+//                if (rank1Int + rank2Int > 8) {
+//                    return currentBuyIn - currentInActionBet;
+//                }
+//            }
+//
+//        }
+        if (players.size() > 2) {
+            return 0;
+        } else {
+            return currentBuyIn - currentInActionBet;
         }
-        return 0;
     }
 
     public static void showdown(JsonElement game) {
