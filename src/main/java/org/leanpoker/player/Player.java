@@ -34,25 +34,12 @@ public class Player {
                 aceofspace = player.getAsJsonObject();
                 hole_cards = player.getAsJsonObject().get("hole_cards").getAsJsonArray();
 
-                if (currentBuyIn - currentInActionBet > 900) {
-                    return 0;
-                }else {
-                    return currentBuyIn - currentInActionBet;
-                }
-
+                JsonObject card1 = hole_cards.get(0).getAsJsonObject();
+                JsonObject card2 = hole_cards.get(1).getAsJsonObject();
+                if (card1.get("rank").getAsString().equals(card2.get("rank").getAsString())) return currentBuyIn - currentInActionBet;
             }
         }
-
-        if(hole_cards.get(0).getAsJsonObject().get("suit").getAsString().equals(hole_cards.get(1).getAsJsonObject().get("suit").getAsString())) {
-            System.err.println(hole_cards.get(0).getAsJsonObject().get("suit").getAsString());
-            System.err.println(hole_cards.get(1).getAsJsonObject().get("suit").getAsString());
-        }
-
-        if (currentBuyIn - currentInActionBet > 900) {
-            return 0;
-        } else {
-            return currentBuyIn - currentInActionBet;
-        }
+        return 0;
     }
 
     public static void showdown(JsonElement game) {
