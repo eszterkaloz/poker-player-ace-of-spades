@@ -3,11 +3,6 @@ package org.leanpoker.player;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-import jdk.nashorn.internal.ir.IfNode;
-import jdk.nashorn.internal.parser.JSONParser;
-
-import java.util.Map;
 
 public class Player {
     private static String name = "Ace of Spades";
@@ -43,7 +38,22 @@ public class Player {
 
                 JsonObject card1 = hole_cards.get(0).getAsJsonObject();
                 JsonObject card2 = hole_cards.get(1).getAsJsonObject();
-                if (card1.get("rank").getAsString().equals(card2.get("rank").getAsString())) return currentBuyIn - currentInActionBet;
+                String rank1 = card1.get("rank").getAsString();
+                String rank2 = card2.get("rank").getAsString();
+                if (rank1.equals(rank2)){
+                    return currentBuyIn - currentInActionBet;
+
+                }
+                try{
+                    Integer.parseInt(rank1);
+                } catch(Exception e) {
+                    try{
+                        Integer.parseInt(rank2);
+                    } catch (Exception e2){
+                        return currentBuyIn - currentInActionBet;
+                    }
+
+                }
             }
         }
         return 0;
@@ -52,4 +62,6 @@ public class Player {
     public static void showdown(JsonElement game) {
 
     }
+
+    
 }
