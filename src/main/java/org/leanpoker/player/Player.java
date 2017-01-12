@@ -29,7 +29,7 @@ public class Player {
         System.err.println("Eszter log " + game.get("community_cards").getAsJsonArray());
         System.err.println("HOLE CARDS" + game.get("game_id").getAsString());
 
-        JsonArray players = game.get("community_cards").getAsJsonArray();
+        JsonArray players = game.get("players").getAsJsonArray();
         for(JsonElement player : players){
             System.err.println("TRYING TO PRINT PLAYERS ::::");
 
